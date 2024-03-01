@@ -33,10 +33,10 @@
 			tabPage2 = new TabPage();
 			tableLayoutPanel1 = new TableLayoutPanel();
 			tableLayoutPanel2 = new TableLayoutPanel();
-			btnSearch = new Button();
-			btnCreate = new Button();
-			btnUpdate = new Button();
 			btnDelete = new Button();
+			btnUpdate = new Button();
+			btnCreate = new Button();
+			btnSearch = new Button();
 			tableLayoutPanel3 = new TableLayoutPanel();
 			dgvDataTable = new DataGridView();
 			tabControl1.SuspendLayout();
@@ -113,27 +113,17 @@
 			tableLayoutPanel2.Size = new Size(780, 84);
 			tableLayoutPanel2.TabIndex = 0;
 			// 
-			// btnSearch
+			// btnDelete
 			// 
-			btnSearch.Dock = DockStyle.Fill;
-			btnSearch.Location = new Point(10, 10);
-			btnSearch.Margin = new Padding(10);
-			btnSearch.Name = "btnSearch";
-			btnSearch.Size = new Size(175, 64);
-			btnSearch.TabIndex = 0;
-			btnSearch.Text = "Search";
-			btnSearch.UseVisualStyleBackColor = true;
-			// 
-			// btnCreate
-			// 
-			btnCreate.Dock = DockStyle.Fill;
-			btnCreate.Location = new Point(205, 10);
-			btnCreate.Margin = new Padding(10);
-			btnCreate.Name = "btnCreate";
-			btnCreate.Size = new Size(175, 64);
-			btnCreate.TabIndex = 1;
-			btnCreate.Text = "Create";
-			btnCreate.UseVisualStyleBackColor = true;
+			btnDelete.Dock = DockStyle.Fill;
+			btnDelete.Location = new Point(595, 10);
+			btnDelete.Margin = new Padding(10);
+			btnDelete.Name = "btnDelete";
+			btnDelete.Size = new Size(175, 64);
+			btnDelete.TabIndex = 3;
+			btnDelete.Text = "Delete";
+			btnDelete.UseVisualStyleBackColor = true;
+			btnDelete.Click += btnDelete_Click;
 			// 
 			// btnUpdate
 			// 
@@ -145,17 +135,31 @@
 			btnUpdate.TabIndex = 2;
 			btnUpdate.Text = "Update";
 			btnUpdate.UseVisualStyleBackColor = true;
+			btnUpdate.Click += btnUpdate_Click;
 			// 
-			// btnDelete
+			// btnCreate
 			// 
-			btnDelete.Dock = DockStyle.Fill;
-			btnDelete.Location = new Point(595, 10);
-			btnDelete.Margin = new Padding(10);
-			btnDelete.Name = "btnDelete";
-			btnDelete.Size = new Size(175, 64);
-			btnDelete.TabIndex = 3;
-			btnDelete.Text = "Delete";
-			btnDelete.UseVisualStyleBackColor = true;
+			btnCreate.Dock = DockStyle.Fill;
+			btnCreate.Location = new Point(205, 10);
+			btnCreate.Margin = new Padding(10);
+			btnCreate.Name = "btnCreate";
+			btnCreate.Size = new Size(175, 64);
+			btnCreate.TabIndex = 1;
+			btnCreate.Text = "Create";
+			btnCreate.UseVisualStyleBackColor = true;
+			btnCreate.Click += btnCreate_Click;
+			// 
+			// btnSearch
+			// 
+			btnSearch.Dock = DockStyle.Fill;
+			btnSearch.Location = new Point(10, 10);
+			btnSearch.Margin = new Padding(10);
+			btnSearch.Name = "btnSearch";
+			btnSearch.Size = new Size(175, 64);
+			btnSearch.TabIndex = 0;
+			btnSearch.Text = "Search";
+			btnSearch.UseVisualStyleBackColor = true;
+			btnSearch.Click += btnSearch_Click;
 			// 
 			// tableLayoutPanel3
 			// 
@@ -172,6 +176,7 @@
 			// 
 			// dgvDataTable
 			// 
+			dgvDataTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 			dgvDataTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgvDataTable.Dock = DockStyle.Fill;
 			dgvDataTable.Location = new Point(10, 10);
