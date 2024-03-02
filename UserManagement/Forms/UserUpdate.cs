@@ -91,7 +91,7 @@ namespace UserManagement.Forms
 
 				if (InputCheck())
 				{
-					if (phoneValid == null)
+					if (phoneValid == null || phoneValid.Id == UserInfo.Id)
 					{
 						UserInfo.Username = tbUsername.Text;
 						UserInfo.Phone = tbPhone.Text;
