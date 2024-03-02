@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UserManagement.IServices
+﻿namespace UserManagement.IServices
 {
 	public interface IQuery<T>
 	{
@@ -12,7 +6,7 @@ namespace UserManagement.IServices
 		List<T> GetAll();
 
 		// 특정 데이터 조회
-		T GetOne(long id);
+		T GetOne(long? id);
 
 		// 데이터 추가
 		void Create(T entity);
@@ -21,6 +15,6 @@ namespace UserManagement.IServices
 		void Update(T entity);
 
 		// 데이터 삭제
-		void Delete(long id);
+		void Delete(long? id);
 	}
 }

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using UserManagement.IServices;
+﻿using UserManagement.IServices;
 using UserManagement.Models;
 
 namespace UserManagement.Forms
@@ -24,6 +15,39 @@ namespace UserManagement.Forms
 
 		public User UserInfo { get; set; }
 
+		/// <summary>
+		/// Create 수행 후 Input 속성 값들을 모두 초기화
+		/// </summary>
+		public void InputClear()
+		{
+			tbPhone.Clear();
+			tbUsername.Clear();
+			rdbFemale.Checked = false;
+			rdbMale.Checked = false;
+			cbLesson.Text = "";
+		}
+
+		/// <summary>
+		/// input 속성에 값이 비어있는지 체크
+		/// </summary>
+		/// <returns>비어있지 않다면 true 비어있다면 false 반환</returns>
+		public bool InputCheck()
+		{
+			if ((tbPhone.Text != "" || tbPhone.Text != null) && (tbUsername.Text != "" || tbUsername.Text != null) && (cbLesson.Text != "" || cbLesson.Text != null) && (rdbFemale.Checked || rdbMale.Checked))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// 수정할 정보의 값들을 input에 뿌려주는 Load 메소드
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void UserUpdate_Load(object sender, EventArgs e)
 		{
 			tbUsername.Text = UserInfo.Username;
@@ -39,25 +63,48 @@ namespace UserManagement.Forms
 			}
 		}
 
+		/// <summary>
+		/// 수정된 정보로 회원 정보를 수정해 db에 적용하는 버튼 이벤트
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			string gender = "";
+			DialogResult result = MessageBox.Show("회원 정보를 수정하시겠습니까?", "회원 정보 수정", MessageBoxButtons.OKCancel);
 
-			if (rdbMale.Checked == true)
+			if (result == DialogResult.OK)
 			{
-				gender = "남성";
-			}
-			else
-			{
-				gender = "여성";
-			}
+				string gender = "";
 
-			UserInfo.Username = tbUsername.Text;
-			UserInfo.Phone = tbPhone.Text;
-			UserInfo.Lesson = cbLesson.Text;
-			UserInfo.Gender = gender;
+				if (rdbMale.Checked == true)
+				{
+					gender = "남성";
+				}
+				else
+				{
+					gender = "여성";
+				}
 
-			_iQuery.Update(UserInfo);
+
+
+				if (InputCheck())
+				{
+
+					UserInfo.Username = tbUsername.Text;
+					UserInfo.Phone = tbPhone.Text;
+					UserInfo.Lesson = cbLesson.Text;
+					UserInfo.Gender = gender;
+					_iQuery.Update(UserInfo);
+
+					InputClear();
+
+					Close();
+				}
+				else
+				{
+					MessageBox.Show("모든 항목을 입력해 주세요.");
+				}
+			}
 		}
 	}
 }
