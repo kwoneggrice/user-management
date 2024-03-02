@@ -24,7 +24,7 @@ namespace UserManagement.Forms
 			tbUsername.Clear();
 			rdbFemale.Checked = false;
 			rdbMale.Checked = false;
-			cbLesson.Text = "";
+			cbLesson.SelectedIndex = -1;
 		}
 
 		/// <summary>
@@ -33,7 +33,7 @@ namespace UserManagement.Forms
 		/// <returns>비어있지 않다면 true, 비어있다면 false 리턴</returns>
 		public bool InputCheck()
 		{
-			if (tbPhone.Text != null && tbUsername.Text != null && cbLesson.Text != null && (rdbFemale.Checked || rdbMale.Checked))
+			if ((tbPhone.Text != "" || tbPhone.Text != null) && (tbUsername.Text != "" || tbUsername.Text != null) && (cbLesson.Text != "" || cbLesson.Text != null) && (rdbFemale.Checked || rdbMale.Checked))
 			{
 				return true;
 			}
