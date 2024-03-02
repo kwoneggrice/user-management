@@ -167,5 +167,15 @@ namespace UserManagement.Forms
 		{
 			ShowPieChartGender();
 		}
+
+		/// <summary>
+		/// 레슨 원형차트 새롭게 갱신하는 메소드
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void btnLessonRefresh_Click(object sender, EventArgs e)
+		{
+			ShowPieChartLesson();
+		}
 	}
 }

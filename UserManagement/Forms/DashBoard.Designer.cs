@@ -28,12 +28,12 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			tabControl1 = new TabControl();
 			tabPage1 = new TabPage();
 			tableLayoutPanel4 = new TableLayoutPanel();
@@ -112,39 +112,40 @@
 			btnLessonRefresh.TabIndex = 3;
 			btnLessonRefresh.Text = "Refresh";
 			btnLessonRefresh.UseVisualStyleBackColor = true;
+			btnLessonRefresh.Click += btnLessonRefresh_Click;
 			// 
 			// pieChartLesson
 			// 
-			chartArea3.Name = "ChartArea1";
-			pieChartLesson.ChartAreas.Add(chartArea3);
+			chartArea1.Name = "ChartArea1";
+			pieChartLesson.ChartAreas.Add(chartArea1);
 			pieChartLesson.Dock = DockStyle.Fill;
-			legend3.Name = "Legend1";
-			pieChartLesson.Legends.Add(legend3);
+			legend1.Name = "Legend1";
+			pieChartLesson.Legends.Add(legend1);
 			pieChartLesson.Location = new Point(403, 10);
 			pieChartLesson.Margin = new Padding(10);
 			pieChartLesson.Name = "pieChartLesson";
-			series3.ChartArea = "ChartArea1";
-			series3.Legend = "Legend1";
-			series3.Name = "Series1";
-			pieChartLesson.Series.Add(series3);
+			series1.ChartArea = "ChartArea1";
+			series1.Legend = "Legend1";
+			series1.Name = "Series1";
+			pieChartLesson.Series.Add(series1);
 			pieChartLesson.Size = new Size(373, 336);
 			pieChartLesson.TabIndex = 1;
 			pieChartLesson.Text = "chart2";
 			// 
 			// pieChartGender
 			// 
-			chartArea4.Name = "ChartArea1";
-			pieChartGender.ChartAreas.Add(chartArea4);
+			chartArea2.Name = "ChartArea1";
+			pieChartGender.ChartAreas.Add(chartArea2);
 			pieChartGender.Dock = DockStyle.Fill;
-			legend4.Name = "Legend1";
-			pieChartGender.Legends.Add(legend4);
+			legend2.Name = "Legend1";
+			pieChartGender.Legends.Add(legend2);
 			pieChartGender.Location = new Point(10, 10);
 			pieChartGender.Margin = new Padding(10);
 			pieChartGender.Name = "pieChartGender";
-			series4.ChartArea = "ChartArea1";
-			series4.Legend = "Legend1";
-			series4.Name = "Series1";
-			pieChartGender.Series.Add(series4);
+			series2.ChartArea = "ChartArea1";
+			series2.Legend = "Legend1";
+			series2.Name = "Series1";
+			pieChartGender.Series.Add(series2);
 			pieChartGender.Size = new Size(373, 336);
 			pieChartGender.TabIndex = 0;
 			pieChartGender.Text = "chart1";
