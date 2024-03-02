@@ -6,11 +6,13 @@ namespace UserManagement.Forms
 	public partial class UserUpdate : Form
 	{
 		private readonly IQuery<User> _iQuery;
+		private readonly UserManagementContext _userManagementContext;
 
-		public UserUpdate(IQuery<User> iQuery)
+		public UserUpdate(IQuery<User> iQuery, UserManagementContext userManagementContext)
 		{
 			InitializeComponent();
 			_iQuery = iQuery;
+			_userManagementContext = userManagementContext;
 		}
 
 		public User UserInfo { get; set; }
@@ -24,7 +26,7 @@ namespace UserManagement.Forms
 			tbUsername.Clear();
 			rdbFemale.Checked = false;
 			rdbMale.Checked = false;
-			cbLesson.Text = "";
+			cbLesson.SelectedIndex = -1;
 		}
 
 		/// <summary>
@@ -85,20 +87,26 @@ namespace UserManagement.Forms
 					gender = "여성";
 				}
 
-
+				var phoneValid = _userManagementContext.Users.FirstOrDefault(x => x.Phone == tbPhone.Text);
 
 				if (InputCheck())
 				{
+					if (phoneValid == null)
+					{
+						UserInfo.Username = tbUsername.Text;
+						UserInfo.Phone = tbPhone.Text;
+						UserInfo.Lesson = cbLesson.Text;
+						UserInfo.Gender = gender;
+						_iQuery.Update(UserInfo);
 
-					UserInfo.Username = tbUsername.Text;
-					UserInfo.Phone = tbPhone.Text;
-					UserInfo.Lesson = cbLesson.Text;
-					UserInfo.Gender = gender;
-					_iQuery.Update(UserInfo);
+						InputClear();
 
-					InputClear();
-
-					Close();
+						Close();
+					}
+					else
+					{
+						MessageBox.Show("중복된 전화번호입니다.");
+					}
 				}
 				else
 				{
