@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UserManagement.IServices;
+﻿using UserManagement.IServices;
 using UserManagement.Models;
 
 namespace UserManagement.Services
@@ -32,7 +27,7 @@ namespace UserManagement.Services
 		/// </summary>
 		/// <param name="id">삭제할 entitydml id 값</param>
 		/// <exception cref="InvalidOperationException"></exception>
-		public void Delete(long id)
+		public void Delete(long? id)
 		{
 			var data = _userManagementContext.Users.FirstOrDefault(x => x.Id == id);
 
@@ -62,7 +57,7 @@ namespace UserManagement.Services
 		/// <param name="id">가져올 entity의 id 값</param>
 		/// <returns></returns>
 		/// <exception cref="InvalidOperationException"></exception>
-		public User GetOne(long id)
+		public User GetOne(long? id)
 		{
 			var data = _userManagementContext.Users.FirstOrDefault(x => x.Id == id);
 
@@ -73,7 +68,6 @@ namespace UserManagement.Services
 			else
 			{
 				throw new InvalidOperationException();
-
 			}
 		}
 
