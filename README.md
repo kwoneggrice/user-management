@@ -24,5 +24,7 @@ Update-Database // 정보를 가지고 실제 DB에 업데이트 수행
 ```
 
 # 시연
-https://github.com/kwoneggrice/user-management/assets/73627446/f618c3c6-caac-4bc0-a3f7-b1f48d712951
+https://github.com/kwoneggrice/user-management/assets/73627446/317a8002-cbcf-4cc0-a374-6fd28faff5b2
+
+
 
