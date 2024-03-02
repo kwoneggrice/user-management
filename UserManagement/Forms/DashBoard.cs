@@ -122,6 +122,7 @@ namespace UserManagement.Forms
 		private void btnCreate_Click(object sender, EventArgs e)
 		{
 			_userCreate.ShowDialog();
+			RefreshDataTable();
 		}
 
 		/// <summary>
@@ -137,6 +138,7 @@ namespace UserManagement.Forms
 			{
 				_iQuery.Delete(targetId);
 			}
+			RefreshDataTable();
 		}
 
 		/// <summary>
@@ -156,6 +158,7 @@ namespace UserManagement.Forms
 
 				_userUpdate.ShowDialog();
 			}
+			RefreshDataTable();
 		}
 
 		/// <summary>
