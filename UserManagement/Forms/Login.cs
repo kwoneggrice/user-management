@@ -37,16 +37,22 @@ namespace UserManagement.Forms
 
 			var data = _iQuery.GetOneByLoginId(adminId);
 
-			if (password.Equals(data.Password))
+			if (tbId.Text.Length == 0 || tbPassword.Text.Length == 0)
 			{
-				Program.isLogin = true;
-				Close();
+				MessageBox.Show("로그인 정보를 입력하세요.");
 			}
 			else
 			{
-				MessageBox.Show("입력하신 정보가 일치하지 않습니다.");
+				if (password.Equals(data.Password))
+				{
+					Program.isLogin = true;
+					Close();
+				}
+				else
+				{
+					MessageBox.Show("입력하신 정보가 일치하지 않습니다.");
+				}
 			}
-			
 		}
 	}
 }
