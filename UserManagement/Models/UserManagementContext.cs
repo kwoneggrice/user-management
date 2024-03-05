@@ -5,6 +5,7 @@ namespace UserManagement.Models
 	public class UserManagementContext : DbContext
 	{
 		public DbSet<User> Users { get; set; }
+		public DbSet<Admin> Admins { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
