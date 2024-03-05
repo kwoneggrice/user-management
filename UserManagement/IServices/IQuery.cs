@@ -16,5 +16,8 @@
 
 		// 데이터 삭제
 		void Delete(long? id);
+
+		// 특정 데이터 조회(로그인 id 값)
+		T GetOneByLoginId(string? loginId);
 	}
 }

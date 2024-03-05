@@ -71,6 +71,11 @@ namespace UserManagement.Services
 			}
 		}
 
+		public User GetOneByLoginId(string loginId)
+		{
+			throw new NotImplementedException();
+		}
+
 		/// <summary>
 		/// 테이블 값을 변경하는 메소드
 		/// </summary>
