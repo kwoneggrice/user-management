@@ -35,7 +35,8 @@ namespace UserManagement.Forms
 		/// <returns>비어있지 않다면 true 비어있다면 false 반환</returns>
 		public bool InputCheck()
 		{
-			if (tbPhone.Text.Length == 0 && tbPhone.Text.Length == 0 && cbLesson.Text.Length == 0 && (rdbFemale.Checked || rdbMale.Checked))
+			if (!string.IsNullOrWhiteSpace(tbUsername.Text) && !string.IsNullOrWhiteSpace(tbPhone.Text)
+				&& !string.IsNullOrWhiteSpace(cbLesson.Text) && (rdbFemale.Checked || rdbMale.Checked))
 			{
 				return true;
 			}
