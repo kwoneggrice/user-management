@@ -42,16 +42,16 @@
 			// 
 			// tableLayoutPanel1
 			// 
-			tableLayoutPanel1.ColumnCount = 2;
-			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 52.0408173F));
-			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 47.9591827F));
+			tableLayoutPanel1.ColumnCount = 1;
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+			tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
 			tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 0);
 			tableLayoutPanel1.Dock = DockStyle.Fill;
 			tableLayoutPanel1.Location = new Point(0, 0);
 			tableLayoutPanel1.Name = "tableLayoutPanel1";
 			tableLayoutPanel1.RowCount = 1;
-			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-			tableLayoutPanel1.Size = new Size(784, 461);
+			tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+			tableLayoutPanel1.Size = new Size(361, 461);
 			tableLayoutPanel1.TabIndex = 0;
 			// 
 			// tableLayoutPanel2
@@ -65,7 +65,7 @@
 			tableLayoutPanel2.Controls.Add(tbId, 0, 1);
 			tableLayoutPanel2.Controls.Add(btnLogin, 0, 4);
 			tableLayoutPanel2.Dock = DockStyle.Fill;
-			tableLayoutPanel2.Location = new Point(411, 3);
+			tableLayoutPanel2.Location = new Point(3, 3);
 			tableLayoutPanel2.Name = "tableLayoutPanel2";
 			tableLayoutPanel2.RowCount = 6;
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666718F));
@@ -74,7 +74,7 @@
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
 			tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-			tableLayoutPanel2.Size = new Size(370, 455);
+			tableLayoutPanel2.Size = new Size(355, 455);
 			tableLayoutPanel2.TabIndex = 0;
 			// 
 			// btnSignup
@@ -83,7 +83,7 @@
 			btnSignup.Location = new Point(10, 385);
 			btnSignup.Margin = new Padding(10);
 			btnSignup.Name = "btnSignup";
-			btnSignup.Size = new Size(350, 60);
+			btnSignup.Size = new Size(335, 60);
 			btnSignup.TabIndex = 5;
 			btnSignup.Text = "Signup";
 			btnSignup.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
 			tbPassword.Margin = new Padding(10);
 			tbPassword.Name = "tbPassword";
 			tbPassword.PasswordChar = '*';
-			tbPassword.Size = new Size(350, 23);
+			tbPassword.Size = new Size(335, 23);
 			tbPassword.TabIndex = 3;
 			// 
 			// label1
@@ -127,7 +127,7 @@
 			tbId.Location = new Point(10, 101);
 			tbId.Margin = new Padding(10);
 			tbId.Name = "tbId";
-			tbId.Size = new Size(350, 23);
+			tbId.Size = new Size(335, 23);
 			tbId.TabIndex = 2;
 			// 
 			// btnLogin
@@ -136,7 +136,7 @@
 			btnLogin.Location = new Point(10, 310);
 			btnLogin.Margin = new Padding(10);
 			btnLogin.Name = "btnLogin";
-			btnLogin.Size = new Size(350, 55);
+			btnLogin.Size = new Size(335, 55);
 			btnLogin.TabIndex = 4;
 			btnLogin.Text = "Login";
 			btnLogin.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(784, 461);
+			ClientSize = new Size(361, 461);
 			Controls.Add(tableLayoutPanel1);
 			Name = "Login";
 			Text = "Login";
