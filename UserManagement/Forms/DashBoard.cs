@@ -122,6 +122,7 @@ namespace UserManagement.Forms
 		private void btnCreate_Click(object sender, EventArgs e)
 		{
 			_userCreate.ShowDialog();
+			RefreshDataTable();
 		}
 
 		/// <summary>
@@ -156,6 +157,8 @@ namespace UserManagement.Forms
 				_userUpdate.UserInfo = data;
 
 				_userUpdate.ShowDialog();
+
+				RefreshDataTable();
 			}
 		}
 

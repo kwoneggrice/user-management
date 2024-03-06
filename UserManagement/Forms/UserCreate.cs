@@ -1,4 +1,5 @@
-﻿using UserManagement.IServices;
+﻿using System.Drawing.Printing;
+using UserManagement.IServices;
 using UserManagement.Models;
 
 namespace UserManagement.Forms
@@ -85,8 +86,6 @@ namespace UserManagement.Forms
 						InputClear();
 
 						Close();
-
-						_iQuery.GetAll();
 					}
 					else
 					{
