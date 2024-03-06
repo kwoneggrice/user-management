@@ -16,6 +16,7 @@ namespace UserManagement.Forms
 	public partial class Signup : Form
 	{
 		private readonly IQuery<Admin> _iQuery;
+		private const string AMDIN_CODE = "ADMIN";
 
 		public Signup(IQuery<Admin> iQuery)
 		{
@@ -30,29 +31,39 @@ namespace UserManagement.Forms
 		/// <param name="e"></param>
 		private void btnSignup_Click(object sender, EventArgs e)
 		{
-			if (tbId.Text.Length == 0 || tbPassword.Text.Length == 0)
+			if (string.IsNullOrWhiteSpace(tbId.Text) || string.IsNullOrWhiteSpace(tbPassword.Text)
+				|| string.IsNullOrWhiteSpace(tbAdminCode.Text))
 			{
 				MessageBox.Show("모든 항목을 입력해주세요.");
 				return;
 			}
 			else
 			{
-				string adminId = tbId.Text;
-				string password = PasswordUtil.HashingPassword(tbPassword.Text);
-
-				Admin admin = new Admin()
+				if (tbAdminCode.Text == Signup.AMDIN_CODE)
 				{
-					AdminId = adminId,
-					Password = password
-				};
+					string adminId = tbId.Text;
+					string password = PasswordUtil.HashingPassword(tbPassword.Text);
 
-				_iQuery.Create(admin);
+					Admin admin = new Admin()
+					{
+						AdminId = adminId,
+						Password = password
+					};
+
+					_iQuery.Create(admin);
+					Close();
+				}
+				else
+				{
+					MessageBox.Show("관리자 코드를 확인해주세요");
+				}
 			}
 		}
 
 		private void btnCancle_Click(object sender, EventArgs e)
 		{
 			Close();
+
 		}
 	}
 }
