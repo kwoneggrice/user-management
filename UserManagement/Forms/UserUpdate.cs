@@ -103,6 +103,8 @@ namespace UserManagement.Forms
 						InputClear();
 
 						Close();
+
+						_iQuery.GetAll();
 					}
 					else
 					{
