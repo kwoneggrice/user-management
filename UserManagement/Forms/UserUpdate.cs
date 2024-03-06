@@ -115,5 +115,10 @@ namespace UserManagement.Forms
 				}
 			}
 		}
+
+		private void btnCancle_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
 	}
 }

@@ -109,6 +109,7 @@
 			btnCancle.TabIndex = 1;
 			btnCancle.Text = "Cancle";
 			btnCancle.UseVisualStyleBackColor = true;
+			btnCancle.Click += btnCancle_Click;
 			// 
 			// btnCreate
 			// 
